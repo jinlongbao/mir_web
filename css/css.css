@@ -214,7 +214,11 @@ body {
 .slide1 .next{top:-367px;left:1144px;}
 
 .slide2{width: 1223px;height:586px;margin-left: 0px;top: 206px;}
-.slide2 .uls li{list-style: none;}
+.slide2 .slide2images{overflow: hidden; position: relative;}
+.slide2 .uls{list-style: none; position: relative; width: 100%; height: 100%;}
+.slide2 .uls li{list-style: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s;}
+.slide2 .uls li:nth-child(1){opacity: 1;}
+.slide2 .uls li img{width: 100%; height: auto; display: block;}
 .slide2 .prev,.slide2 .next{width: 39px;height: 51px;}
 .slide2 .prev{top: -252px;left: 396px;}
 .slide2 .next{top: -304px;left: -369px;}
