@@ -306,33 +306,36 @@ a:active {color: #CCCCCC;text-decoration: none;}
 
 
 
-	<div class="zbShow2" id="yxjs6">
-		<div class="center">
+	<section class="fashion-show" id="yxjs6">
+		<div class="fashion-container">
 
-        <div class="slide2">
-				<div class="slide2images">
-					<ul class="uls">
-						<li><img src="img/gw1.gif"></li>
-						<li><img src="img/gw2.gif"></li>
-						<li><img src="img/gw3.gif"></li>
-					</ul>
-                     <a class="prev" href="javascript:void(0)"></a>
-					<a class="next" href="javascript:void(0)"></a>
+			<div class="fashion-slider">
+				<div class="fashion-main">
+					<img src="img/gw1.gif" alt="时装展示 1" class="fashion-image active" data-index="0">
+					<img src="img/gw2.gif" alt="时装展示 2" class="fashion-image" data-index="1">
+					<img src="img/gw3.gif" alt="时装展示 3" class="fashion-image" data-index="2">
 				</div>
 
-				<div class="slide2hd">
-					<ul class="uls">
-						<li class="sm1 sm on"><div class="xx1"></div></li>
-						<li class="sm2 sm"><div class="xx1"></div></li>
-						<li class="sm3 sm"><div class="xx1"></div></li>
-					</ul>
+				<div class="fashion-nav">
+					<button class="fashion-prev" aria-label="上一张">‹</button>
+					<button class="fashion-next" aria-label="下一张">›</button>
 				</div>
-
 			</div>
 
+			<div class="fashion-thumbs">
+				<div class="thumb-item active" data-index="0">
+					<div class="thumb-bg" style="background-image: url(img/01.png)"></div>
+				</div>
+				<div class="thumb-item" data-index="1">
+					<div class="thumb-bg" style="background-image: url(img/02.png)"></div>
+				</div>
+				<div class="thumb-item" data-index="2">
+					<div class="thumb-bg" style="background-image: url(img/03.png)"></div>
+				</div>
+			</div>
 
 		</div>
-	</div>
+	</section>
 
 
 	
@@ -387,6 +390,42 @@ a:active {color: #CCCCCC;text-decoration: none;}
 		$('.content-part.part-tese').addClass('show');
 		$('.gallery_container').gallery_slider({imgNum: 5});
 		// 移除不存在元素的自动点击功能
+
+		// 现代幻灯片功能
+		let currentIndex = 0;
+		const images = $('.fashion-image');
+		const thumbs = $('.thumb-item');
+		const totalImages = images.length;
+
+		function showImage(index) {
+			images.removeClass('active');
+			thumbs.removeClass('active');
+			images.eq(index).addClass('active');
+			thumbs.eq(index).addClass('active');
+		}
+
+		function nextImage() {
+			currentIndex = (currentIndex + 1) % totalImages;
+			showImage(currentIndex);
+		}
+
+		function prevImage() {
+			currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+			showImage(currentIndex);
+		}
+
+		// 点击小图切换
+		thumbs.click(function(){
+			currentIndex = $(this).data('index');
+			showImage(currentIndex);
+		});
+
+		// 点击导航按钮
+		$('.fashion-prev').click(prevImage);
+		$('.fashion-next').click(nextImage);
+
+		// 初始显示第一个
+		showImage(0);
 	})
 
 </script>

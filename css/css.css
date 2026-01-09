@@ -158,15 +158,132 @@ body {
 
 .gzimg{width:309px;height:309px;left:50%;margin-left:-366px;top:221px;background: url(../images/bj04_jcjt/gifdh.gif) no-repeat center;z-index: 50;}
 
-.zbShow2{
+.fashion-show {
 	width: 100%;
 	max-width: 1920px;
 	min-height: 992px;
 	margin: 0 auto;
-	overflow: hidden;
-	position: relative;
+	padding: 40px 20px;
 	background: url(../images/bj_05.jpg) no-repeat center;
 	background-size: cover;
+}
+
+.fashion-container {
+	max-width: 1400px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+}
+
+.fashion-slider {
+	position: relative;
+	width: 100%;
+	max-width: 800px;
+	aspect-ratio: 16/9;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0,0,0,0.3);
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.fashion-main {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.fashion-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	opacity: 0;
+	transition: opacity 0.6s ease;
+	pointer-events: none;
+}
+
+.fashion-image.active {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.fashion-nav {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 20px;
+	z-index: 10;
+}
+
+.fashion-prev,
+.fashion-next {
+	background: rgba(0,0,0,0.6);
+	color: white;
+	border: none;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	font-size: 24px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.fashion-prev:hover,
+.fashion-next:hover {
+	background: rgba(255,255,255,0.2);
+	transform: scale(1.1);
+}
+
+.fashion-thumbs {
+	display: flex;
+	gap: 15px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.thumb-item {
+	width: 120px;
+	height: 80px;
+	border-radius: 8px;
+	overflow: hidden;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	border: 3px solid transparent;
+	opacity: 0.7;
+}
+
+.thumb-item:hover,
+.thumb-item.active {
+	opacity: 1;
+	border-color: #ffcc00;
+	transform: scale(1.05);
+	box-shadow: 0 4px 16px rgba(255,204,0,0.3);
+}
+
+.thumb-bg {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	transition: transform 0.3s ease;
+}
+
+.thumb-item:hover .thumb-bg {
+	transform: scale(1.1);
 }
 
 .zbShow2 .zbtext{width:1077px;height:40px;left: 421px;}
