@@ -1,0 +1,189 @@
+@charset "utf-8";
+
+#top-icon {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 999;
+    background-color: #FFF;
+    border-bottom-style: solid;
+    border-color: #ffffff;
+}
+
+.nav_logo {
+    position: absolute;
+    left: 340px;
+    top: 5px;
+}
+
+.nav_logo p {
+    font-size: 31px;
+    font-family: 'dbsjt';
+    float: left;
+    background-image: -webkit-linear-gradient(left, #770808, #ff0000 25%, #770808 50%, #ff0000 75%, #770808);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-background-size: 200% 100%;
+    -webkit-animation: masked-animation 2s infinite linear;
+}
+
+@-webkit-keyframes masked-animation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+.nav_logo p img {
+    padding-right: 10px;
+}
+
+.nav_icons {
+    position: absolute;
+    top: 5px;
+    right: 330px;
+    z-index: 20;
+}
+
+.nav_icons ul li {
+    float: left;
+    margin: 0 20px;
+}
+
+.nav_icons ul li a {
+    display: block;
+    width: 36px;
+    position: relative;
+    color: #4f4f4f;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav_icons ul li a span:hover {
+    opacity: 0.6;
+}
+
+.nav_icons ul li a span {
+    display: block;
+    margin: 0 auto 5px;
+    height: 29px;
+    background-image: url(../images/top-icon/icons.png);
+    background-repeat: no-repeat;
+}
+
+.nav_icons ul li a span.icon-news {
+    width: 27px;
+    background-position: 0 0;
+}
+
+.nav_icons ul li a span.icon-weixin {
+    width: 35px;
+    background-position: -51px 0;
+}
+
+.nav_icons ul li a span.icon-weibo {
+    width: 35px;
+    background-position: -104px 0;
+}
+
+.nav_icons ul li a span.icon-qq {
+    width: 28px;
+    background-position: -159px 0;
+}
+
+.nav_icons ul li a span.icon-kf {
+    width: 37px;
+    background: url(../images/top-icon/icon_kf.png) center top no-repeat;
+}
+
+.nav_icons ul li a span.icon-ds {
+    width: 87px;
+    background: url(../images/top-icon/iconlogo.png) center top no-repeat;
+}
+
+.nav_icons ul li a span.icon-music-play {
+    width: 28px;
+    background-position: -208px 0;
+    -webkit-animation: rotate 4s linear infinite;
+    -moz-animation: rotate 4s linear infinite;
+    -o-animation: rotate 4s linear infinite;
+    animation: rotate 4s linear infinite;
+}
+
+.nav_icons ul li a span.icon-music-pasue {
+    width: 28px;
+    background-position: -253px 0;
+}
+
+.nav_icons ul li a:hover div {
+    display: block;
+}
+
+.nav_icons ul li a div {
+    display: none;
+    position: absolute;
+    top: 90px;
+    left: -91px;
+    background: #fff;
+    padding-bottom: 15px;
+    padding-top: 5px;
+}
+
+.nav_icons ul li a div:before {
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 24px solid transparent;
+    border-bottom-color: #fff;
+    position: absolute;
+    top: -42px;
+    left: 50%;
+    margin-left: -24px;
+}
+
+.nav_icons ul li a div img {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #fff;
+}
+
+.nav_icons ul li a div em {
+    font-size: 16px;
+    color: #1e1a1c;
+    text-align: center;
+    font-style: normal;
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg)
+    }
+    to {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@-ms-keyframes rotate {
+    from {
+        -ms-transform: rotate(0deg)
+    }
+    to {
+        -ms-transform: rotate(360deg)
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(359deg)
+    }
+}
+
+.beat {
+    width: 90px !important;
+}
