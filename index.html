@@ -385,49 +385,57 @@ a:active {color: #CCCCCC;text-decoration: none;}
 
 <script src="js/jquery-yys-slider.js"></script>
 <script type="text/javascript">
+$(document).ready(function(){
+	$('.content-part.part-tese').addClass('show');
+	$('.gallery_container').gallery_slider({imgNum: 5});
+	// 移除不存在元素的自动点击功能
 
-	$(function(){
-		$('.content-part.part-tese').addClass('show');
-		$('.gallery_container').gallery_slider({imgNum: 5});
-		// 移除不存在元素的自动点击功能
+	// 现代幻灯片功能
+	let currentIndex = 0;
+	const images = $('.fashion-image');
+	const thumbs = $('.thumb-item');
+	const totalImages = images.length;
 
-		// 现代幻灯片功能
-		let currentIndex = 0;
-		const images = $('.fashion-image');
-		const thumbs = $('.thumb-item');
-		const totalImages = images.length;
+	console.log('幻灯片初始化:', totalImages, '张图片');
 
-		function showImage(index) {
-			images.removeClass('active');
-			thumbs.removeClass('active');
-			images.eq(index).addClass('active');
-			thumbs.eq(index).addClass('active');
-		}
+	function showImage(index) {
+		console.log('切换到图片:', index);
+		images.removeClass('active');
+		thumbs.removeClass('active');
+		images.eq(index).addClass('active');
+		thumbs.eq(index).addClass('active');
+	}
 
-		function nextImage() {
-			currentIndex = (currentIndex + 1) % totalImages;
-			showImage(currentIndex);
-		}
+	function nextImage() {
+		currentIndex = (currentIndex + 1) % totalImages;
+		showImage(currentIndex);
+	}
 
-		function prevImage() {
-			currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-			showImage(currentIndex);
-		}
+	function prevImage() {
+		currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+		showImage(currentIndex);
+	}
 
-		// 点击小图切换
-		thumbs.click(function(){
-			currentIndex = $(this).data('index');
-			showImage(currentIndex);
-		});
+	// 点击小图切换
+	thumbs.click(function(){
+		currentIndex = $(this).data('index');
+		showImage(currentIndex);
+	});
 
-		// 点击导航按钮
-		$('.fashion-prev').click(prevImage);
-		$('.fashion-next').click(nextImage);
+	// 点击导航按钮
+	$('.fashion-prev').click(function(e){
+		e.preventDefault();
+		prevImage();
+	});
 
-		// 初始显示第一个
-		showImage(0);
-	})
+	$('.fashion-next').click(function(e){
+		e.preventDefault();
+		nextImage();
+	});
 
+	// 初始显示第一个
+	showImage(0);
+});
 </script>
 </div>
 
