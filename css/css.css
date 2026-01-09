@@ -159,36 +159,34 @@ body {
 .gzimg{width:309px;height:309px;left:50%;margin-left:-366px;top:221px;background: url(../images/bj04_jcjt/gifdh.gif) no-repeat center;z-index: 50;}
 
 .fashion-show {
+	position: relative;
 	width: 100%;
 	max-width: 1920px;
-	min-height: 992px;
+	height: 992px;
 	margin: 0 auto;
-	padding: 40px 20px;
 	background: url(../images/bj_05.jpg) no-repeat center;
 	background-size: cover;
 }
 
 .fashion-container {
-	max-width: 1400px;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 30px;
+	position: relative;
+	width: 100%;
+	height: 100%;
 }
 
 .fashion-slider {
-	position: relative;
-	width: 100%;
-	max-width: 800px;
-	aspect-ratio: 16/9;
+	position: absolute;
+	top: 150px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 600px;
+	height: 400px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: rgba(0,0,0,0.3);
 	border-radius: 12px;
 	overflow: hidden;
-	box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+	box-shadow: 0 8px 32px rgba(0,0,0,0.5);
 }
 
 .fashion-main {
@@ -198,6 +196,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background: rgba(0,0,0,0.2);
 }
 
 .fashion-image {
@@ -228,13 +227,13 @@ body {
 
 .fashion-prev,
 .fashion-next {
-	background: rgba(0,0,0,0.6);
+	background: rgba(0,0,0,0.7);
 	color: white;
 	border: none;
-	width: 50px;
-	height: 50px;
+	width: 45px;
+	height: 45px;
 	border-radius: 50%;
-	font-size: 24px;
+	font-size: 20px;
 	cursor: pointer;
 	transition: all 0.3s ease;
 	display: flex;
@@ -244,34 +243,37 @@ body {
 
 .fashion-prev:hover,
 .fashion-next:hover {
-	background: rgba(255,255,255,0.2);
+	background: rgba(255,255,255,0.3);
 	transform: scale(1.1);
 }
 
 .fashion-thumbs {
+	position: absolute;
+	bottom: 100px;
+	left: 50%;
+	transform: translateX(-50%);
 	display: flex;
-	gap: 15px;
+	gap: 20px;
 	justify-content: center;
-	flex-wrap: wrap;
 }
 
 .thumb-item {
-	width: 120px;
-	height: 80px;
+	width: 100px;
+	height: 70px;
 	border-radius: 8px;
 	overflow: hidden;
 	cursor: pointer;
 	transition: all 0.3s ease;
-	border: 3px solid transparent;
-	opacity: 0.7;
+	border: 3px solid rgba(255,255,255,0.3);
+	opacity: 0.8;
 }
 
 .thumb-item:hover,
 .thumb-item.active {
 	opacity: 1;
 	border-color: #ffcc00;
-	transform: scale(1.05);
-	box-shadow: 0 4px 16px rgba(255,204,0,0.3);
+	transform: scale(1.1);
+	box-shadow: 0 6px 20px rgba(255,204,0,0.4);
 }
 
 .thumb-bg {
@@ -283,7 +285,7 @@ body {
 }
 
 .thumb-item:hover .thumb-bg {
-	transform: scale(1.1);
+	transform: scale(1.2);
 }
 
 .zbShow2 .zbtext{width:1077px;height:40px;left: 421px;}
