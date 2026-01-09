@@ -27,13 +27,11 @@ body {
 .bl {
 	display: block;
 }
-.ab {
-	position: absolute;
-	left: 431px;
-	top: 0px;
-}
-.rl {
-	position: relative;
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 .topcontainer {
 	width:1920px;height:1079px;left: 50%;margin-left: -960px;
@@ -161,15 +159,14 @@ body {
 .gzimg{width:309px;height:309px;left:50%;margin-left:-366px;top:221px;background: url(../images/bj04_jcjt/gifdh.gif) no-repeat center;z-index: 50;}
 
 .zbShow2{
-	width:1920px;
-	height:992px;
-	left: 50%;
-	margin-left: -960px;
+	width: 100%;
+	max-width: 1920px;
+	min-height: 992px;
+	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
 	background: url(../images/bj_05.jpg) no-repeat center;
-	background-position: 0px -0px;
-	background-image: url(../images/bj_05.jpg);
+	background-size: cover;
 }
 
 .zbShow2 .zbtext{width:1077px;height:40px;left: 421px;}
@@ -232,6 +229,7 @@ body {
 	transition: transform .5s ease, -webkit-transform .5s ease, -moz-transform .5s ease;
 }
 .slide2 .slide2hd .sm:hover{cursor: pointer;}
+.slide2 .slide2hd .sm.on{opacity: 1; border: 2px solid #ffcc00;}
 
 .slide2 .slide2hd .sm1{margin-left:-431px;width:433px;height:250px;overflow:hidden;} 
 .slide2 .slide2hd .sm1 .xx1{background:url(../img/01.png);width:433px;height:250px;overflow:hidden;-webkit-transition: -webkit-transform .5s ease;
@@ -1374,4 +1372,5 @@ address, caption, cite, code, dfn, em, strong, th, var {font-style: normal;font-
 #Download .btn_down_s1{float:left;width: 290px;height: 113px;text-indent:-999em;background:url(../images/btn_down1.png) no-repeat left top;}
 #Download .btn_down_s2{float:left;width: 290px;height: 113px;text-indent:-999em;margin-left: 180px;background:url(../images/btn_down2.png) no-repeat left top;}
 #Download .btn_down_s1:hover{background:url(../images/btn_down1.png) no-repeat left bottom;}
+#Download .btn_down_s2:hover{background:url(../images/btn_down2.png) no-repeat left bottom;}
 #Download .btn_down_s2:hover{background:url(../images/btn_down2.png) no-repeat left bottom;}
